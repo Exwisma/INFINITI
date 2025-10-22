@@ -111,7 +111,7 @@ const Contact = () => {
                 <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium text-foreground mb-1">Email</p>
-                  <p>info@infinity-arch.ru</p>
+                  <p>info@infinity.uz</p>
                 </div>
               </div>
               
@@ -119,7 +119,7 @@ const Contact = () => {
                 <MessageCircle className="w-5 h-5 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium text-foreground mb-1">Telegram</p>
-                  <p>@infinity_architecture</p>
+                  <p>infiniti_project_group</p>
                 </div>
               </div>
               
@@ -127,7 +127,7 @@ const Contact = () => {
                 <Instagram className="w-5 h-5 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium text-foreground mb-1">Instagram</p>
-                  <p>@infinity.arch</p>
+                  <p>infiniti_project_group</p>
                 </div>
               </div>
               
@@ -135,7 +135,7 @@ const Contact = () => {
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium text-foreground mb-1">Адрес</p>
-                  <p>Москва, ул. Архитектурная, д. 1</p>
+                  <p>Toshkent shahar, Olmazor tumani, Nurafshon ko'chasi 41 uy adawmasam</p>
                 </div>
               </div>
             </div>
