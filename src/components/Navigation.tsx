@@ -38,7 +38,7 @@ const Navigation = () => {
           <img
             src={logo}
             alt="Infinity logo"
-            className="h-24 w-36 h-auto md:w-44 object-contain"
+            className="h-20 w-36 h-auto md:w-44 object-contain"
           />
         </button>
 
