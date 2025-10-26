@@ -44,12 +44,18 @@ const Navigation = () => {
 
         {/* Навигация */}
         <div className="flex items-center gap-8 md:gap-12 text-sm md:text-base font-light">
-          <div className="flex items-center gap-8 md:gap-12 text-sm md:text-base font-light max-[550px]:hidden">
+          <div className="flex items-center gap-8 md:gap-12 text-sm md:text-base font-light max-[630px]:hidden">
             <button
             onClick={() => scrollToSection("about")}
             className="hover:opacity-70 transition-opacity"
           >
             О нас
+          </button>
+           <button
+            onClick={() => scrollToSection("skills")}
+            className="hover:opacity-70 transition-opacity"
+          >
+            Услуги
           </button>
           <button
             onClick={() => scrollToSection("projects")}
@@ -67,11 +73,11 @@ const Navigation = () => {
 
           {/* Переключатель языков (без функционала) */}
           <div className="flex items-center gap-2 border-l pl-4 border-gray-300 text-sm">
-            <button className="opacity-100 font-semibold hover:opacity-80 transition-opacity">
+            <button className="opacity-100 transition-opacity hover:opacity-80 font-semibold ">
               RU
             </button>
             <span className="text-gray-400">|</span>
-            <button className="opacity-60 hover:opacity-100 transition-opacity">
+            <button className="opacity-60 transition-opacity hover:opacity-100 ">
               UZ
             </button>
           </div>
