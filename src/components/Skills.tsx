@@ -1,42 +1,44 @@
 import { useEffect, useRef, useState } from "react";
-import { Building2, FileText, Landmark, UserCheck, DraftingCompass,  Ruler } from "lucide-react";
-
-const services = [
-  {
-    icon: <DraftingCompass className="w-10 h-10 text-gradient" />,
-    title: "Архитектурный дизайн",
-    description: "Современные концепции, уникальные решения.",
-  },
-  {
-    icon: <FileText className="w-10 h-10 text-gradient" />,
-    title: "Полный пакет документации",
-    description: "От идеи до чертежей.",
-  },
-  {
-    icon: <Landmark className="w-10 h-10 text-gradient" />,
-    title: "Разрешение на строительство",
-    description: "Все этапы согласования.",
-  },
-  {
-    icon: <UserCheck className="w-10 h-10 text-gradient" />,
-    title: "Авторский надзор",
-    description: "Контроль качества и исполнения.",
-  },
-  {
-    icon: <Building2 className="w-10 h-10 text-gradient" />,
-    title: "Проектирование объектов",
-    description: "Жилые, коммерческие, общественные.",
-  },
-   {
-    icon: <Ruler className="w-10 h-10 text-gradient" />,
-    title: "Интерьерный дизайн",
-    description: "Эстетика и функциональность в каждом пространстве.",
-  },    
-];
+import { Building2, FileText, Landmark, UserCheck, DraftingCompass, Ruler, } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useTranslation();
+
+  const services = [
+    {
+      icon: <DraftingCompass className="w-10 h-10 text-gradient" />,
+      title: t("Skills.Card.cardHeader1"),
+      description: t("Skills.Card.cardFooter1"),
+    },
+    {
+      icon: <FileText className="w-10 h-10 text-gradient" />,
+      title: t("Skills.Card.cardHeader2"),
+      description: t("Skills.Card.cardHeader2"),
+    },
+    {
+      icon: <Landmark className="w-10 h-10 text-gradient" />,
+      title: t("Skills.Card.cardHeader3"),
+      description: t("Skills.Card.cardHeader3"),
+    },
+    {
+      icon: <UserCheck className="w-10 h-10 text-gradient" />,
+      title: t("Skills.Card.cardHeader4"),
+      description: t("Skills.Card.cardHeader4"),
+    },
+    {
+      icon: <Building2 className="w-10 h-10 text-gradient" />,
+      title: t("Skills.Card.cardHeader5"),
+      description: t("Skills.Card.cardHeader5"),
+    },
+    {
+      icon: <Ruler className="w-10 h-10 text-gradient" />,
+      title: t("Skills.Card.cardHeader6"),
+      description: t("Skills.Card.cardHeader6"),
+    },
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -53,7 +55,7 @@ const Services = () => {
   return (
     <section
       ref={sectionRef}
-      id="services"
+      id="skills"
       className="py-24 md:py-32 px-6 md:px-12 bg-gray-50"
     >
       <div className="max-w-6xl mx-auto text-center">
@@ -62,7 +64,7 @@ const Services = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          Наши Услуги
+          {t("Skills.ourServices")}
         </h2>
 
         <div

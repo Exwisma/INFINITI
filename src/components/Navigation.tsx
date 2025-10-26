@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import logo from "../assets/logo/logo4.png"; // или .svg — добавь сюда свой логотип
+import { useTranslation } from 'react-i18next';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,6 +19,12 @@ const Navigation = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const { t, i18n } = useTranslation();
+
+ const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
   };
 
   return (
@@ -49,35 +56,47 @@ const Navigation = () => {
             onClick={() => scrollToSection("about")}
             className="hover:opacity-70 transition-opacity"
           >
-            О нас
+           {t('Navigation.about')}
           </button>
            <button
             onClick={() => scrollToSection("skills")}
             className="hover:opacity-70 transition-opacity"
           >
-            Услуги
+             {t('Navigation.skills')}
           </button>
           <button
             onClick={() => scrollToSection("projects")}
             className="hover:opacity-70 transition-opacity"
           >
-            Проекты
+             {t('Navigation.projects')}
           </button>
           <button
             onClick={() => scrollToSection("contact")}
             className="hover:opacity-70 transition-opacity"
           >
-            Контакты
+             {t('Navigation.contacts')}
           </button>
           </div>
 
           {/* Переключатель языков (без функционала) */}
-          <div className="flex items-center gap-2 border-l pl-4 border-gray-300 text-sm">
-            <button className="opacity-100 transition-opacity hover:opacity-80 font-semibold ">
+          <div className="flex items-center gap-2 border-l border-r pr-4 pl-4 border-gray-400 text-sm">
+            <button onClick={() => changeLanguage('ru')} 
+                  className={`transition-opacity hover:opacity-80 font-semibold ${
+          i18n.language === 'ru'
+            ? 'opacity-100'
+            : 'opacity-60'
+             }`}
+              >
               RU
             </button>
             <span className="text-gray-400">|</span>
-            <button className="opacity-60 transition-opacity hover:opacity-100 ">
+            <button onClick={() => changeLanguage('uz')}   
+            className={`transition-opacity hover:opacity-80 font-semibold ${
+          i18n.language === 'uz'
+            ? 'opacity-100'
+            : 'opacity-60'
+        }`}
+        >
               UZ
             </button>
           </div>

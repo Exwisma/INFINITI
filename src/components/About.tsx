@@ -1,48 +1,33 @@
 import { useEffect, useRef, useState } from "react";
-import { Building2, Lightbulb, Ruler, Users, ShieldCheck, Award } from "lucide-react";
+import {  Lightbulb, Ruler, Users} from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
-const values = [
-  {
-    icon: <Lightbulb className="w-10 h-10 text-gradient" />,
-    title: "Современные решения",
-    description:
-      "Мы внедряем инновационные технологии и создаём архитектуру будущего — эстетичную, энергоэффективную и функциональную.",
-  },
-  {
-    icon: <Ruler className="w-10 h-10 text-gradient" />,
-    title: "Точность и профессионализм",
-    description:
-      "Каждый проект разрабатывается с вниманием к деталям и строгим соблюдением стандартов качества.",
-  },
-  {
-    icon: <Users className="w-10 h-10 text-gradient" />,
-    title: "Ориентация на клиента",
-    description:
-      "Мы строим не просто здания — мы создаём комфортное пространство, отражающее индивидуальность заказчика.",
-  },
-  // {
-  //   icon: <ShieldCheck className="w-10 h-10 text-gradient" />,
-  //   title: "Надёжность и контроль",
-  //   description:
-  //     "От концепции до сдачи — мы контролируем каждый этап, гарантируя точность и безопасность.",
-  // },
-  // {
-  //   icon: <Building2 className="w-10 h-10 text-gradient" />,
-  //   title: "Полный цикл работ",
-  //   description:
-  //     "Архитектурное проектирование, документация, согласование и авторский надзор — всё в одном месте.",
-  // },
-  // {
-  //   icon: <Award className="w-10 h-10 text-gradient" />,
-  //   title: "Качество и репутация",
-  //   description:
-  //     "Infinity — это доверие, проверенное годами. Мы гордимся реализованными проектами и довольными клиентами.",
-  // },
-];
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useTranslation();
+  
+  const values = [
+    {
+      icon: <Lightbulb className="w-10 h-10 text-gradient" />,
+      title: t('About.Card.cardHeader1'),
+      description:
+      t('About.Card.cardFooter1'),
+    },
+    {
+      icon: <Ruler className="w-10 h-10 text-gradient" />,
+      title: t('About.Card.cardHeader2'),
+      description:
+       t('About.Card.cardFooter2'),
+    },
+    {
+      icon: <Users className="w-10 h-10 text-gradient" />,
+      title: t('About.Card.cardHeader2'),
+      description:
+       t('About.Card.cardFooter3'),
+    },
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -65,6 +50,7 @@ const About = () => {
     };
   }, []);
 
+
   return (
     <section
       ref={sectionRef}
@@ -77,7 +63,7 @@ const About = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          О нас
+          {t('About.about')}
         </h2>
 
         <p
@@ -88,10 +74,7 @@ const About = () => {
           <span className="font-semibold text-foreground text-gradient">
             Infinity
           </span>{" "}
-          — команда профессионалов, создающая архитектурные и инженерные
-          решения, в которых соединяются эстетика, технологии и комфорт.
-          Мы проектируем и строим пространства, которые вдохновляют и живут
-          десятилетиями.
+          — {t('About.description')}
         </p>
 
         <div

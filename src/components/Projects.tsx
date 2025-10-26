@@ -5,36 +5,31 @@ import projectVilla from "../assets/infiniti-img/infiniti-img4.jpg";
 import projectConcept from "../assets/infiniti-img/infiniti-img3.jpg";
 import projectApartment from "../assets/infiniti-img/infiniti-img14.jpg";
 import projectCultural from "../assets/infiniti-img/infiniti-img19.jpg";
+import { useTranslation } from 'react-i18next';
 
 const projects = [
   {
     id: 1,
-    title: "Жилой дом",
     image: projectResidential,
   },
   {
     id: 2,
-    title: "Офисное здание",
     image: projectOffice,
   },
   {
     id: 3,
-    title: "Вилла",
     image: projectVilla,
   },
   {
     id: 4,
-    title: "Концепт-проект",
     image: projectConcept,
   },
   {
     id: 5,
-    title: "Жилой комплекс",
     image: projectApartment,
   },
   {
     id: 6,
-    title: "Культурный центр",
     image: projectCultural,
   },
 ];
@@ -42,7 +37,7 @@ const projects = [
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-
+  const { t } = useTranslation()
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -76,7 +71,7 @@ const Projects = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          Наши проекты
+         {t("Project.project")}
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
@@ -91,7 +86,6 @@ const Projects = () => {
               <div className="relative overflow-hidden bg-secondary aspect-square">
                 <img
                   src={project.image}
-                  alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-500" />

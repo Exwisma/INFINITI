@@ -4,12 +4,14 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Phone, Send , Instagram, MapPin } from "lucide-react";
 import { toast } from "sonner";
+import { useTranslation } from 'react-i18next';
 
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "" });
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -85,7 +87,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          Контакты
+          {t('Contacts.contacts')}
         </h2>
         
         <div className="grid md:grid-cols-2 gap-12 md:gap-16">
@@ -94,12 +96,12 @@ const handleSubmit = async (e: React.FormEvent) => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <h3 className="text-2xl font-light mb-8">Свяжитесь с нами</h3>
+            <h3 className="text-2xl font-light mb-8">{t('Contacts.contactUs1')}</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Label htmlFor="name" className="text-base font-light">
-                  Имя
+                  {t('Contacts.name')}
                 </Label>
                 <Input
                   id="name"
@@ -113,7 +115,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               
               <div>
                 <Label htmlFor="phone" className="text-base font-light">
-                  Телефон
+                  {t('Contacts.phone')}
                 </Label>
                 <Input
                   id="phone"
@@ -130,7 +132,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                 type="submit"
                 className="w-full bg-foreground text-background hover:bg-foreground/90 font-light tracking-wide py-6"
               >
-                Отправить
+               {t('Contacts.button')}
               </Button>
             </form>
           </div>
@@ -140,14 +142,14 @@ const handleSubmit = async (e: React.FormEvent) => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <h3 className="text-2xl font-light mb-8">Наши контакты</h3>
+            <h3 className="text-2xl font-light mb-8">{t('Contacts.contactUs2')}</h3>
             
             <div className="space-y-6 text-muted-foreground font-light">
               <div className="flex items-start gap-4">
                 <a href="tel:+998888848844"><Phone className="w-5 h-5 mt-1 flex-shrink-0" /></a>
                 <div>
                   <a href="tel:+998888848844">
-                    <p className="font-medium text-foreground mb-1">Телефон</p>
+                    <p className="font-medium text-foreground mb-1"> {t('Contacts.phone')}</p>
                     <p>+998 88 884 88 44</p>
                   </a>
                 </div>
@@ -192,8 +194,8 @@ const handleSubmit = async (e: React.FormEvent) => {
                   <a href="https://maps.google.com/?q=Toshkent%20shahar,%20Olmazor%20tumani,%20Nurafshon%20ko'chasi%2041"
                    target="_blank"
                    rel="noopener noreferrer">
-                    <p className="font-medium text-foreground mb-1">Адрес</p>
-                    <p>Toshkent shahar, Olmazor tumani, Nurafshon ko'chasi 41 uy adawmasam</p>
+                    <p className="font-medium text-foreground mb-1">{t('Contacts.address')}</p>
+                    <p>{t('Contacts.address1')}</p>
                   </a>
                 </div>
               </div>

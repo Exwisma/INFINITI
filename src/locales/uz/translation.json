@@ -1,0 +1,53 @@
+{
+  "Navigation": {
+    "about": "Biz haqimizda",
+    "skills": "Xizmatlar",
+    "projects": "Loyihalar",
+    "contacts": "Kontaktlar"
+  },
+  "About": {
+    "about": "Biz haqimizda",
+    "description": "estetika, texnologiya va qulaylikni birlashtirgan arxitektura va muhandislik yechimlarini yaratuvchi professionallar jamoasi. Biz ilhomlantiradigan va o'nlab yillar davom etadigan joylarni loyihalashtiramiz va quramiz.",
+    "Card": {
+      "cardHeader1": "Zamonaviy yechimlar",
+      "cardFooter1": "Biz innovatsion texnologiyalarni joriy qilamiz va kelajak arxitekturasini yaratamiz - estetik, energiya tejamkor va funktsional.",
+      "cardHeader2": "Aniqlik va professionallik",
+      "cardFooter2": "Har bir loyiha tafsilotlarga e'tibor va sifat standartlariga qat'iy rioya qilgan holda ishlab chiqilgan.",
+      "cardHeader3": "Mijozlarga e'tibor qaratish",
+      "cardFooter3": "Biz nafaqat binolar quramiz, balki mijozning shaxsiyatini aks ettiruvchi qulay joylarni yaratamiz."
+    }
+  },
+  "Skills": {
+    "ourServices": "Xizmatlarimiz",
+    "Card": {
+      "cardHeader1": "Arxitektura dizayni",
+      "cardFooter1": "Zamonaviy kontseptsiyalar, noyob yechimlar.",
+      "cardHeader2": "To‘liq hujjatlar to‘plami",
+      "cardFooter2": "G‘oyadan chizmalargacha.",
+      "cardHeader3": "Qurilish uchun ruxsatnoma",
+      "cardFooter3": "Kelishuvning barcha bosqichlari.",
+      "cardHeader4": "Mualliflik nazorati",
+      "cardFooter4": "Sifat va bajarilishni nazorat qilish.",
+      "cardHeader5": "Obyektlarni loyihalash",
+      "cardFooter5": "Yashash, tijorat va jamoat binolari.",
+      "cardHeader6": "Interyer dizayni",
+      "cardFooter6": "Har bir makonda estetika va funksionallik."
+    }
+  },
+  "Project": {
+    "project": "Bizning loyihalarimiz"
+  },
+  "Contacts": {
+    "contacts": "Bog‘lanish",
+    "contactUs1": "Biz bilan bog‘laning",
+    "name": "Ism",
+    "phone": "Telefon",
+    "button": "Yuborish",
+    "contactUs2": "Biz bilan aloqa",
+    "address": "Manzil",
+    "address1": "Toshkent shahri, Olmazor tumani, Nurafshon ko‘chasi, 41-uy"
+  },
+  "Footer": {
+    "copy": "Barcha huquqlar himoyalangan."
+  }
+}
