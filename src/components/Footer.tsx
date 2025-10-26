@@ -7,7 +7,7 @@ const Footer = () => {
         </div>
         
         <div className="text-sm text-muted-foreground font-light">
-          © {new Date().getFullYear()} Infinity. Все права защищены.
+          © {new Date().getFullYear()} Infinit. Все права защищены.
         </div>
       </div>
     </footer>

@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Mail, MessageCircle, Instagram, MapPin } from "lucide-react";
+import { Phone, Send , Instagram, MapPin } from "lucide-react";
 import { toast } from "sonner";
+
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,13 +32,46 @@ const Contact = () => {
     };
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (formData.name && formData.phone) {
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!formData.name || !formData.phone) {
+    toast.error("Пожалуйста, заполните все поля");
+    return;
+  }
+
+  const BOT_TOKEN = "8374164866:AAEknfXChlRMd0BvdX3xbyCzg1dP0qXXlns"; // ⚠️ сюда вставляешь токен
+  const CHAT_ID = "758234437"; // твой chat_id
+  const message =  `📩 Yangi so‘rov:\n👤 Ism: ${formData.name}\n📞 Telefon raqami: ${formData.phone}`;
+
+  try {
+    const response = await fetch(
+      `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: message,
+          parse_mode: "HTML",
+        }),
+      }
+    );
+
+    const data = await response.json();
+
+    if (data.ok) {
       toast.success("Спасибо! Мы свяжемся с вами в ближайшее время.");
       setFormData({ name: "", phone: "" });
+    } else {
+      toast.error("Ошибка при отправке. Попробуйте позже.");
     }
-  };
+  } catch (error) {
+    console.error(error);
+    toast.error("Ошибка соединения. Попробуйте позже.");
+  }
+};
+
 
   return (
     <section 
@@ -69,6 +103,7 @@ const Contact = () => {
                 </Label>
                 <Input
                   id="name"
+                  name="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="mt-2 bg-background border-border focus:border-foreground transition-colors"
@@ -82,6 +117,7 @@ const Contact = () => {
                 </Label>
                 <Input
                   id="phone"
+                  name="phone"
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -108,34 +144,57 @@ const Contact = () => {
             
             <div className="space-y-6 text-muted-foreground font-light">
               <div className="flex items-start gap-4">
-                <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
+                <a href="tel:+998888848844"><Phone className="w-5 h-5 mt-1 flex-shrink-0" /></a>
                 <div>
-                  <p className="font-medium text-foreground mb-1">Email</p>
-                  <p>info@infinity.uz</p>
+                  <a href="tel:+998888848844">
+                    <p className="font-medium text-foreground mb-1">Телефон</p>
+                    <p>+998 88 884 88 44</p>
+                  </a>
                 </div>
               </div>
               
               <div className="flex items-start gap-4">
-                <MessageCircle className="w-5 h-5 mt-1 flex-shrink-0" />
+                <a href="https://t.me/infiniti_project_group"
+                target="_blank"
+                rel="noopener noreferrer">
+              <Send className="w-5 h-5 mt-1 flex-shrink-0" /></a>
                 <div>
-                  <p className="font-medium text-foreground mb-1">Telegram</p>
-                  <p>infiniti_project_group</p>
+                <a href="https://t.me/infiniti_project_group"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <p className="font-medium text-foreground mb-1">Telegram</p>
+                    <p>@infiniti_project_group</p>
+                </a>
                 </div>
               </div>
               
               <div className="flex items-start gap-4">
-                <Instagram className="w-5 h-5 mt-1 flex-shrink-0" />
+               <a  href="https://instagram.com/infiniti_project_group"
+                  target="_blank"
+                  rel="noopener noreferrer">
+              <Instagram className="w-5 h-5 mt-1 flex-shrink-0" /></a>
                 <div>
-                  <p className="font-medium text-foreground mb-1">Instagram</p>
-                  <p>infiniti_project_group</p>
+                 <a  href="https://instagram.com/infiniti_project_group"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                   <p className="font-medium text-foreground mb-1">Instagram</p>
+                   <p>infiniti_project_group</p>
+                 </a>
                 </div>
               </div>
               
               <div className="flex items-start gap-4">
-                <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
+               <a  href="https://maps.google.com/?q=Toshkent%20shahar,%20Olmazor%20tumani,%20Nurafshon%20ko'chasi%2041"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                <MapPin className="w-5 h-5 mt-1 flex-shrink-0" /></a>
                 <div>
-                  <p className="font-medium text-foreground mb-1">Адрес</p>
-                  <p>Toshkent shahar, Olmazor tumani, Nurafshon ko'chasi 41 uy adawmasam</p>
+                  <a href="https://maps.google.com/?q=Toshkent%20shahar,%20Olmazor%20tumani,%20Nurafshon%20ko'chasi%2041"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <p className="font-medium text-foreground mb-1">Адрес</p>
+                    <p>Toshkent shahar, Olmazor tumani, Nurafshon ko'chasi 41 uy adawmasam</p>
+                  </a>
                 </div>
               </div>
             </div>

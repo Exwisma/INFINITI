@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import heroImage from "@/assets/hero-architecture.jpg";
+import heroImage from "../assets/infiniti-img/infiniti-img0.jpg";
+import logo from "../assets/logo/logo1.png"
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,14 +30,14 @@ const Hero = () => {
       >
 
         {/* Название */}
-        <h1 className="text-6xl md:text-8xl font-light tracking-wider mb-6 text-foreground">
-          INFINITY
+        <h1 className="text-6xl md:text-8xl font-light tracking-wider mb-1 text-foreground ">
+          INFINITI
         </h1>
 
         {/* Подзаголовок */}
-        <p className="text-xl md:text-2xl font-light text-foreground/80 tracking-wide">
-          Архитектура без границ
-        </p>
+        <h2 className="text-4xl md:text-6xl font-normal tracking-wider text-foreground">
+          Project Group
+        </h2>
       </div>
 
       {/* Стрелка вниз */}

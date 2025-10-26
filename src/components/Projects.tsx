@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import projectResidential from "@/assets/project-residential.jpg";
-import projectOffice from "@/assets/project-office.jpg";
-import projectVilla from "@/assets/project-villa.jpg";
-import projectConcept from "@/assets/project-concept.jpg";
-import projectApartment from "@/assets/project-apartment.jpg";
-import projectCultural from "@/assets/project-cultural.jpg";
+import projectResidential from "../assets/infiniti-img/infiniti-img15.jpg";
+import projectOffice from "../assets/infiniti-img/infiniti-img9.jpg";
+import projectVilla from "../assets/infiniti-img/infiniti-img4.jpg";
+import projectConcept from "../assets/infiniti-img/infiniti-img3.jpg";
+import projectApartment from "../assets/infiniti-img/infiniti-img14.jpg";
+import projectCultural from "../assets/infiniti-img/infiniti-img19.jpg";
 
 const projects = [
   {
@@ -98,7 +98,7 @@ const Projects = () => {
               </div>
               
               <h3 className="mt-4 text-lg md:text-xl font-light tracking-wide text-foreground group-hover:text-foreground/70 transition-colors">
-                {project.title}
+                {/* {project.title} */}
               </h3>
             </div>
           ))}

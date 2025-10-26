@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logo from "@/assets/logo.png"; // или .svg — добавь сюда свой логотип
+import logo from "../assets/logo/logo4.png"; // или .svg — добавь сюда свой логотип
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,7 +44,8 @@ const Navigation = () => {
 
         {/* Навигация */}
         <div className="flex items-center gap-8 md:gap-12 text-sm md:text-base font-light">
-          <button
+          <div className="flex items-center gap-8 md:gap-12 text-sm md:text-base font-light max-[550px]:hidden">
+            <button
             onClick={() => scrollToSection("about")}
             className="hover:opacity-70 transition-opacity"
           >
@@ -62,6 +63,7 @@ const Navigation = () => {
           >
             Контакты
           </button>
+          </div>
 
           {/* Переключатель языков (без функционала) */}
           <div className="flex items-center gap-2 border-l pl-4 border-gray-300 text-sm">
