@@ -45,7 +45,10 @@
     "button": "Yuborish",
     "contactUs2": "Biz bilan aloqa",
     "address": "Manzil",
-    "address1": "Toshkent shahri, Olmazor tumani, Nurafshon ko‘chasi, 41-uy"
+    "address1": "Toshkent shahri, Olmazor tumani, Nurafshon ko‘chasi, 41-uy",
+    "thankYou": "Rahmat! Tez orada siz bilan bog'lanamiz.",
+    "erorr1": "Yuborishda xatolik yuz berdi. Keyinroq qayta urinib ko‘ring.",
+    "erorr2": "Ulanish xatosi. Keyinroq qayta urinib ko‘ring."
   },
   "Footer": {
     "copy": "Barcha huquqlar himoyalangan."

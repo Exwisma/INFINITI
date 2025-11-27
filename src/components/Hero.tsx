@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import heroImage from "../assets/infiniti-img/infiniti-img0.jpg";
-import logo from "../assets/logo/logo1.png"
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);

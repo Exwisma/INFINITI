@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import {  Lightbulb, Ruler, Users} from "lucide-react";
 import { useTranslation } from 'react-i18next';
-
+import heroImage from "../assets/infiniti-img/infiniti-img7.jpg";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -55,9 +55,16 @@ const About = () => {
     <section
       ref={sectionRef}
       id="about"
-      className="py-24 md:py-32 px-6 md:px-12 bg-white"
+      className="py-24 md:py-32 px-6 md:px-12  
+      bg-cover bg-center bg-background/40 backdrop-blur-[2px]"
+       style={{ backgroundImage: `url(${heroImage})` }}
     >
-      <div className="max-w-6xl mx-auto text-center">
+      
+        <div className="absolute inset-0 bg-background/40 backdrop-blur-[2px]"></div>
+
+      <div 
+      className="max-w-6xl mx-auto text-center"
+      >
         <h2
           className={`text-4xl md:text-5xl font-light mb-10 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -67,7 +74,7 @@ const About = () => {
         </h2>
 
         <p
-          className={`max-w-3xl mx-auto text-lg md:text-xl text-gray-600 mb-16 leading-relaxed transition-all duration-1000 delay-200 ${
+          className={`max-w-3xl mx-auto text-lg md:text-xl text-foreground text-gradient mb-16 leading-relaxed transition-all duration-1000 delay-200 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >

@@ -37,11 +37,6 @@ const Contact = () => {
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
 
-  if (!formData.name || !formData.phone) {
-    toast.error("Пожалуйста, заполните все поля");
-    return;
-  }
-
   const BOT_TOKEN = "8374164866:AAEknfXChlRMd0BvdX3xbyCzg1dP0qXXlns"; // ⚠️ сюда вставляешь токен
   const CHAT_ID = "758234437"; // твой chat_id
   const message =  `📩 Yangi so‘rov:\n👤 Ism: ${formData.name}\n📞 Telefon raqami: ${formData.phone}`;
@@ -63,14 +58,14 @@ const handleSubmit = async (e: React.FormEvent) => {
     const data = await response.json();
 
     if (data.ok) {
-      toast.success("Спасибо! Мы свяжемся с вами в ближайшее время.");
+      toast.success( t('Contacts.thankYou'));
       setFormData({ name: "", phone: "" });
     } else {
-      toast.error("Ошибка при отправке. Попробуйте позже.");
+      toast.error( t('Contacts.erorr1'));
     }
   } catch (error) {
     console.error(error);
-    toast.error("Ошибка соединения. Попробуйте позже.");
+    toast.error( t('Contacts.erorr2'));
   }
 };
 

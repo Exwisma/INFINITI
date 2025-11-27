@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Building2, FileText, Landmark, UserCheck, DraftingCompass, Ruler, } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import heroImage from "../assets/infiniti-img/infiniti-img18.jpg";
 
 const Services = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -56,8 +57,12 @@ const Services = () => {
     <section
       ref={sectionRef}
       id="skills"
-      className="py-24 md:py-32 px-6 md:px-12 bg-gray-50"
+      className="py-24 md:py-32 px-6 md:px-12 
+      bg-cover bg-center bg-background/40 backdrop-blur-[2px]"
+        style={{ backgroundImage: `url(${heroImage})` }}
     >
+      <div className="absolute inset-0 bg-background/40 backdrop-blur-[2px]"></div>
+
       <div className="max-w-6xl mx-auto text-center">
         <h2
           className={`text-4xl md:text-5xl font-light mb-16 transition-all duration-1000 ${
